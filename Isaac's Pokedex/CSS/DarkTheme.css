@@ -1,0 +1,10 @@
+:root {
+    --bodyBackgroundColor: #121212;
+    --headerBackgroundColor: gray;
+    --bodyTextColor: white;
+    --pokemonCardBackgroundColor: #6f7c80;
+    --pokemonCardTextColor: white;
+    --inputSearchBorderColor: white;
+    --inputSearchBackgroundColor: #121212;
+    --inputSearchTextColor: white;
+}

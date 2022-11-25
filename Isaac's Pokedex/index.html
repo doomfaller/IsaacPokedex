@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script src="Scripts/Main.js"></script>
+        <script src="Scripts/ThemeSupport.js"></script>
+        <link rel="stylesheet" href="CSS/stylesheet.css" type="text/css">
+    </head>
+    <body onload="onIndexPageLoad();">
+        <div id="header" class="header">    
+            <a href="index.html">
+                <img style="width: 50px; height: 50px;display: inline;" src="Images/Poke_Ball_icon.svg"/>
+            </a>
+            <div style="text-align: center; font-weight: bold;display: inline;margin-left: 45%; vertical-align: top;">
+                Isaac's Web Pokedex
+            </div>
+            <div style="text-align: right; margin-left:30%;display: inline; vertical-align: top;">
+                <input placeholder="Search..." type="text" onchange="filterPokemonCards(this.value)" class="input-search">
+            </div>
+        </div>
+        <div id="PokeContainer" class="poke-container"></div>
+    </body>
+</html>

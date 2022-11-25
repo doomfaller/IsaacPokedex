@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--bodyBackgroundColor);
+    color: var(--bodyTextColor);
+    margin: 0px;
+}
+
+.table-records {
+    font-size: 13px;
+    border-spacing: 0px;
+    text-align: center;
+}
+
+.table-records th {
+    border-bottom: 1px solid black;
+}
+.table-records thead tr {
+    background-color: green;
+}
+
+.table-records tbody tr:nth-child(odd){
+    background-color: red;
+
+}
+.table-records tbody tr:nth-child(even){
+    background-color: orange;
+
+}
+.table-records tbody tr td {
+    padding: 5px;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background-color: var(--headerBackgroundColor);
+    margin: auto;
+    padding: 10px;
+}
+
+.poke-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-between;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding-top: 75px;
+}
+
+.pokemon-card {
+    background-color: var(--pokemonCardBackgroundColor);
+    border-radius: 20px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    color: var(--pokemonCardTextColor);
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.input-search {
+    height: 30px;
+    border-radius: 5px;
+    border-color: var(--inputSearchBorderColor);
+    color: var(--inputSearchTextColor);
+    background-color: var(--inputSearchBackgroundColor);
+}
+
+.input-search::placeholder {
+    opacity: 1;
+    font-weight: bold;
+}
