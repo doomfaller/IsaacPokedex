@@ -7,4 +7,6 @@
     --inputSearchBorderColor: white;
     --inputSearchBackgroundColor: #121212;
     --inputSearchTextColor: white;
+    --tableRowEvenBackgroundColor: rgb(49, 49, 49);
+    --tableRowOddBackgroundColor: rgb(34, 34, 34);
 }

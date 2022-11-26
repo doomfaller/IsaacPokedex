@@ -5,14 +5,6 @@ function onIndexPageLoad(){
     }
 }
 
-function onDetailPageLoad(){
-    initUserPreferredTheme();
-    const params = new Proxy(new URLSearchParams(window.location.search), {
-        get: (searchParams, prop) => searchParams.get(prop),
-      });
-    getPokemonForDetailPage(params.pokemonNumber);
-}
-
 function filterPokemonCards(searchKeyword) {
     const pokeContainer = document.getElementById('PokeContainer');
     const pokemonCards = pokeContainer.getElementsByClassName('pokemon-card');
@@ -38,14 +30,6 @@ async function getPokemon(pokemonNumber) {
     createPokemonCard(pokemon, pokemonNumber);
 }
 
-async function getPokemonForDetailPage(pokemonNumber) {
-    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonNumber}`;
-    const response = await fetch(url);
-    const pokemon = await response.json();
-    console.log(pokemon);
-    createDetailPage(pokemon);
-}
-
 function createPokemonCard(pokemon, pokemonNumber) {
     const pokemonElement = document.createElement('div');
     pokemonElement.onclick = function () {
@@ -64,8 +48,4 @@ function createPokemonCard(pokemon, pokemonNumber) {
     pokemonElement.innerHTML = pokemonInnerHTML;
     const pokeContainer = document.getElementById('PokeContainer');
     pokeContainer.appendChild(pokemonElement);
-}
-
-function createDetailPage(pokemon) {
-    //TODO: Look at object being returned from pokemon api, Create Detail Page HTML
 }

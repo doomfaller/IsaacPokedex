@@ -9,23 +9,25 @@ body {
     font-size: 13px;
     border-spacing: 0px;
     text-align: center;
+    display: inline;
 }
 
 .table-records th {
     border-bottom: 1px solid black;
 }
+
 .table-records thead tr {
     background-color: green;
 }
 
 .table-records tbody tr:nth-child(odd){
-    background-color: red;
-
+    background-color: var(--tableRowOddBackgroundColor);
 }
+
 .table-records tbody tr:nth-child(even){
-    background-color: orange;
-
+    background-color: var(--tableRowEvenBackgroundColor);
 }
+
 .table-records tbody tr td {
     padding: 5px;
 }
@@ -73,3 +75,18 @@ body {
     opacity: 1;
     font-weight: bold;
 }
+
+.main-content-header-info {
+    display: inline;
+}
+
+.tables-container {
+    display: inline;
+    text-align: center;
+}
+
+.tables-container div {
+    display: block;
+    text-align: center;
+}
+

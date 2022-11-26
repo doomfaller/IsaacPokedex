@@ -1,7 +1,7 @@
 <html>
     <head>
-        <script src="Scripts/Main.js"></script>
         <script src="Scripts/ThemeSupport.js"></script>
+        <script src="Scripts/detail.js"></script>
         <link rel="stylesheet" href="CSS/stylesheet.css" type="text/css">
     </head>
     <body onload="onDetailPageLoad();">
@@ -13,7 +13,59 @@
                 
             </div>
         </div>
-        <div>
+        <div id="MainContent" style="text-transform: capitalize; padding-top: 75px;">
+        <div style="text-align: center">    
+            <div id="poke-images">
+
+            </div>
+            <div id="Name" class="main-content-header-info"> </div>
+                <br/>
+                <div id="Type" class="main-content-header-info">Type:</div>
+                <br/>
+                <div id="Height" class="main-content-header-info"></div>
+                <br/>
+                <div id="Weight" class="main-content-header-info"></div>
+                <br/>
+                <div id="Ability" class="main-content-header-info">Abilities:</div>
+            </div>
+            <br/>
+            <br/>
+            <div class="tables-container">
+                <div>
+                    <span style="font-weight: bold;">Stats</span>
+                    <br/>
+                    <table id="StatsTable" class="table-records">
+                        <thead>
+                            <th>HP</th>
+                            <th>Attack</th>
+                            <th>Defense</th>
+                            <th>Special Attack</th>
+                            <th>Special Defense</th>
+                            <th>Speed</th>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br/>
+                <br/>
+                <div>
+                    <span style="font-weight: bold;">Moves</span>
+                    <br/>
+                    <table id="MovesTable" class="table-records">
+                        <thead>
+                            <th>Name</th>
+                            <th>Accuracy</th>
+                            <th>Type</th>
+                            <th>Damage Class</th>
+                            <th>Effect</th>
+                            <th></th>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </body>
 </html>
