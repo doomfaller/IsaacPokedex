@@ -5,7 +5,7 @@ async function getPokemonForDetailPage(pokemonNumber) {
     const response = await fetch(url);
     const pokemon = await response.json();
     console.log(pokemon);
-    await createDetailPage(pokemon);
+    createDetailPage(pokemon);
 }
 
 function createDetailPage(pokemon) {
