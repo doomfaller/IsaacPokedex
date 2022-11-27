@@ -9,7 +9,6 @@ async function getPokemonForDetailPage(pokemonNumber) {
 }
 
 function createDetailPage(pokemon) {
-    //TODO: Look at object being returned from pokemon api, Create Detail Page HTML
     let nameContainer = document.getElementById('Name');
     nameContainer.style.fontWeight = 'bold';
     nameContainer.innerText = pokemon.name;
