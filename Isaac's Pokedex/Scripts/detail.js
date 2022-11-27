@@ -1,3 +1,5 @@
+"use strict";
+
 async function getPokemonForDetailPage(pokemonNumber) {
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemonNumber}`;
     const response = await fetch(url);
@@ -49,14 +51,19 @@ function createDetailPage(pokemon) {
     });
     let movesTable = document.getElementById('MovesTable');
     let movesTableBody = movesTable.getElementsByTagName('tbody')[0];
+
     pokemon.moves.forEach(move => {
         let response = getMoveData(move.move.url);
         response.then((result) => {
-            let replacedEffect = ''; 
-            if (result.effect_chance != null)
-            {
-               replacedEffect = result.effect_entries[0].effect.replace('$effect_chance%', result.effect_chance.includes('/') ? result.effect_chance : + '%');
+            let replacedEffect = '';
+
+            if (result.effect_entries) {
+                replacedEffect = result.effect_entries[0].effect;
+                if (replacedEffect && replacedEffect.includes("$effect_chance%")) {
+                    replacedEffect = replacedEffect.replace('$effect_chance%', result.effect_chance.toString().includes('/') ? result.effect_chance : result.effect_chance + '%');
+                }
             }
+
             movesTableBody.innerHTML += `
             <tr>
                 <td>${result.name}</td>
@@ -66,15 +73,15 @@ function createDetailPage(pokemon) {
                 <td>${replacedEffect != '' ? replacedEffect : 'n/a'}</td>
             </tr>
             `
-       }).catch(err=>console.log(err))
+        }).catch(err => console.log(err))
     });
 }
 
-function onDetailPageLoad(){
+function onDetailPageLoad() {
     initUserPreferredTheme();
     const params = new Proxy(new URLSearchParams(window.location.search), {
         get: (searchParams, prop) => searchParams.get(prop),
-      });
+    });
     getPokemonForDetailPage(params.pokemonNumber);
 }
 
