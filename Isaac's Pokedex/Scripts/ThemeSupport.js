@@ -1,4 +1,12 @@
 function initUserPreferredTheme() {
+
+    let theme = localStorage.getItem('theme');
+
+    if (theme) {
+        applyTheme(theme);
+        return;
+    }
+
     const mqlDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
     const mqlLightTheme = window.matchMedia('(prefers-color-scheme: light)');
 
@@ -7,10 +15,13 @@ function initUserPreferredTheme() {
  
     if (mqlDarkTheme.matches) {
         applyTheme('Dark');
+        saveTheme('Dark');
     } else if (mqlLightTheme.matches) {
-        applyTheme('Light')
+        applyTheme('Light');
+        saveTheme('Light');
     } else {
         applyTheme('Light')
+        saveTheme('Light');
     }
 
 }
@@ -34,4 +45,19 @@ function removeThemes() {
 function themeChange() {
     removeThemes();
     initUserPreferredTheme();
+}
+
+function saveTheme(currentTheme) {
+    localStorage.setItem('theme', currentTheme);
+}
+
+function toggleTheme(currentTheme) {
+    if (currentTheme == 'Light') {
+        applyTheme('Dark')
+        saveTheme('Dark')
+    }
+    else {
+        applyTheme('Light')
+        saveTheme('Light')
+    }
 }
