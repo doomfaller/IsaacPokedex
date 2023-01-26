@@ -15,6 +15,9 @@
             <div style="text-align: right; margin-left:30%;display: inline; vertical-align: top;">
                 <input placeholder="Search..." type="text" onchange="filterPokemonCards(this.value)" class="input-search">
             </div>
+            <div id="themeToggle" onclick="toggleTheme(localStorage.getItem('theme'));">
+                Click Me To Toggle The Theme
+            </div>
         </div>
         <div id="PokeContainer" class="poke-container"></div>
     </body>
